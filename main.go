@@ -47,7 +47,7 @@ func main() {
 	diff := t.Time.Sub(now)
 	if os.Getenv(markName) == markValue {
 		time.Sleep(diff)
-		err := beeep.Alert("Reminder-by CLI", strings.Join(os.Args[2:], " "), "/testdata/info.png")
+		err := beeep.Alert("Reminder:", strings.Join(os.Args[2:], " "), "/testdata/info.png")
 		if err != nil {
 			fmt.Printf("Error sending alert: %v\n", err)
 			os.Exit(4)
